@@ -7,7 +7,7 @@ def average(a, b):
 
 
 def geometric_mean(a, b):
-    return (a * b) ** (1/2)
+    return (a * b) ** (1 / 2)
 
 
 print(f'Среднее арифметическое {x} и {y} = {average(x, y)}\n'

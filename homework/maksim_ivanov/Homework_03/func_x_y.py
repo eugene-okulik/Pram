@@ -3,7 +3,7 @@ y = 7
 
 
 def func_x_y(x, y):
-    return (x - y)/(1 + (x * y))
+    return (x - y) / (1 + (x * y))
 
 
 print(f'{x=}, {y=}\n'
