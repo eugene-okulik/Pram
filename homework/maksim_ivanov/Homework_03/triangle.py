@@ -3,11 +3,11 @@ b = 5
 
 
 def area_triangle(a, b):
-    return a*b/2
+    return a * b / 2
 
 
 def hypotenuse(a, b):
-    return (a**2 + b**2)**(1/2)
+    return (a ** 2 + b ** 2) ** (1 / 2)
 
 
 print(f'Катеты прямоугольного треугольника равны {a} и {b}\n'
