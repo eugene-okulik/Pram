@@ -8,9 +8,9 @@ my_dict = {
         'xy': 'x1y1',
         5: 5,
         7: 111
-        },
+    },
     'set': {1, 6, 5, 'A', 'Qwerty', 8}
-    }
+}
 
 for key, value in my_dict.items():
     if key == 'tuple':
