@@ -19,7 +19,7 @@ for key, value in my_dict.items():
         value.append(22)
         value.pop(1)
     elif key == 'dict':
-        value['i am a tuple'] = 'tuple'
+        value[("i am a tuple",)] = 'tuple'
         value.pop('3')
     elif key == 'set':
         value.add(56)
