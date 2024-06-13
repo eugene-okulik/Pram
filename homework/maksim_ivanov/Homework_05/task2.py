@@ -5,5 +5,5 @@ nums = (
 )
 
 for num in nums:
-    result = int(num[num.index(':')+2:]) + 10
+    result = int(num[num.index(':') + 2:]) + 10
     print(result)
