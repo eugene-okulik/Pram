@@ -14,7 +14,6 @@ def decorator(func):
 
 @decorator
 def calc(first, second, operation):
-    print(f'{operation=}')
     if operation == '+':
         return first + second
     elif operation == '-':
@@ -25,7 +24,7 @@ def calc(first, second, operation):
         return first / second
 
 
-print(calc(3, 5, '+'))
-print(calc(3, 3, '-'))
-print(calc(-3, 5, '+'))
-print(calc(6, 5, '+'))
+first = int(input("Введите первое число: "))
+second = int(input("Введите второе число: "))
+
+print(f'Результат операции: {calc(first, second)}')
