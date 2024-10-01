@@ -9,13 +9,13 @@ data_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt
 days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 
-def read_file(file_path: str):
+def read_file(file_path: str) -> str:
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file.readlines():
             yield line
 
 
-def get_data_from_line(line: str):
+def get_data_from_line(line: str) -> tuple:
     num_date, operation = line.split(' - ')
     date_str = num_date.split('. ')[1]
     date = datetime.datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S.%f')
