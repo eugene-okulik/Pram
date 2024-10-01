@@ -1,13 +1,13 @@
 import datetime
 import os
-
+from typing import Iterator
 
 base_path = os.path.dirname(__file__)
 homework_path = os.path.dirname(os.path.dirname(base_path))
 data_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
 
 
-def read_file(file_path: str):
+def read_file(file_path: str) -> Iterator[str]:
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file.readlines():
             yield line
