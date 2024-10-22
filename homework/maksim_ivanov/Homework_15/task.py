@@ -100,7 +100,7 @@ for book in books_for_student:
     print(book)
 
 all_information_query = f'''
-    SELECT s.name, s.second_name, g.title AS GROUP_, b.title AS BOOK, l.title AS LESSON_TITLE, 
+    SELECT s.name, s.second_name, g.title AS GROUP_, b.title AS BOOK, l.title AS LESSON_TITLE,
     m.value AS MARK, s2.title AS LESSON
     FROM students s JOIN `groups` g ON s.group_id = g.id
     JOIN books b ON s.id = b.taken_by_student_id
