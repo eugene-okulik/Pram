@@ -44,7 +44,7 @@ group = {
 }
 
 add_group_query = ("INSERT INTO `groups` (title, start_date, end_date) "
-                     "VALUES (%(title)s, %(start_date)s, %(end_date)s)")
+                   "VALUES (%(title)s, %(start_date)s, %(end_date)s)")
 cursor.execute(add_group_query, group)  # type: ignore
 group['id'] = cursor.lastrowid  # type: ignore
 
@@ -84,10 +84,8 @@ for subjet in subjets:
 add_mark_query = ("INSERT  INTO `marks` (value, lesson_id, student_id) "
                   "VALUES (%s, %s, %s)")
 for lesson_id in all_lesson_id:
-    mark = randint(3,5)
+    mark = randint(3, 5)
     cursor.execute(add_mark_query, (mark, lesson_id, student['id']))
-
-
 
 get_marks_for_student_query = f"SELECT * from marks WHERE student_id = {student['id']}"
 cursor.execute(get_marks_for_student_query)
@@ -102,7 +100,8 @@ for book in books_for_student:
     print(book)
 
 all_information_query = f'''
-    SELECT s.name, s.second_name, g.title AS GROUP_, b.title AS BOOK, l.title AS LESSON_TITLE, m.value AS MARK, s2.title AS LESSON
+    SELECT s.name, s.second_name, g.title AS GROUP_, b.title AS BOOK, l.title AS LESSON_TITLE, 
+    m.value AS MARK, s2.title AS LESSON
     FROM students s JOIN `groups` g ON s.group_id = g.id
     JOIN books b ON s.id = b.taken_by_student_id
     JOIN marks m ON s.id = m.student_id
