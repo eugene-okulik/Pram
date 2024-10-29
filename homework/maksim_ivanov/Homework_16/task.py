@@ -17,7 +17,7 @@ def get_data_from_csv(path: str) -> List:
 
 def get_data_from_db(config: Dict) -> List:
     query = '''
-        select name, second_name, `groups`.title as group_title, `books`.title as subject_title, 
+        select name, second_name, `groups`.title as group_title, `books`.title as subject_title,
         `lessons`.title lesson_title, `marks`.value mark_value from students
         left join `groups` on `groups`.id = students.id
         left join `books` on books.taken_by_student_id = students.id
