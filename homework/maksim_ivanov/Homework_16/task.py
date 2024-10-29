@@ -40,4 +40,3 @@ no_match = list(filter(lambda x: x not in db_data, csv_data))
 print('Нет совпадений в БД:')
 for row in no_match:
     print(row)
-
