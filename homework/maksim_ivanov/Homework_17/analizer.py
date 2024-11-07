@@ -12,14 +12,16 @@ parser.add_argument("-t", "--text", help="Text for search", default="", type=str
 parser.add_argument("-f", "--first", help="Show the first match", action="store_true", default=False)
 args = parser.parse_args()
 
+
 def read_file(filename: Iterator[str]) -> Iterator[List[str]]:
     for line in filename:
         yield line
 
-def find_text(line:str, find_text:str, first:bool) -> List[str] | None:
+
+def find_text(line: str, find_text: str, first: bool) -> List[str] | None:
     if find_text in line:
         words = line.split()
-        find_words_index =[]
+        find_words_index = []
         results = []
         for i, word in enumerate(words):
             if find_text in word:
@@ -34,6 +36,7 @@ def find_text(line:str, find_text:str, first:bool) -> List[str] | None:
         return results
     else:
         return None
+
 
 for root, dirs, log_files in os.walk(args.directory):
     for log_file in log_files:
