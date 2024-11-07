@@ -1,7 +1,6 @@
 import os
 from collections.abc import Iterator
 from typing import List
-from pathlib import Path
 
 import argparse
 
@@ -42,7 +41,8 @@ def find_text(line: str, find_text: str, first: bool) -> List[str] | None:
 for root, dirs, log_files in os.walk(args.directory):
     for log_file in log_files:
         if find_next:
-            with open(Path(f"{root}\\{log_file}"), "r") as f:
+            file_path = os.path.join(root, log_file)
+            with open(file_path, "r") as f:
                 for index, line in enumerate(read_file(f)):
                     if not find_next:
                         break
