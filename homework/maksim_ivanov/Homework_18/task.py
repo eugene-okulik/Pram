@@ -1,8 +1,8 @@
-import sys
-from functools import wraps
 from typing import Dict
 
 import requests
+
+from homework.maksim_ivanov.Homework_18.decorators import log_function_name
 
 BASE_URL = "http://167.172.172.115:52353"
 headers = {'Content-Type': 'application/json'}
@@ -27,17 +27,6 @@ payload_patch = {
         'color': 'blue',
     }
 }
-
-
-def log_function_name(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        print(f"Выполнена функция: {func.__name__}")
-        return result
-
-    return wrapper
-
 
 def get_all_post(base_url: str, headers: Dict):
     endpoint_url = "object"
