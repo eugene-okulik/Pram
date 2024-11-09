@@ -28,6 +28,7 @@ payload_patch = {
     }
 }
 
+
 def get_all_post(base_url: str, headers: Dict):
     endpoint_url = "object"
     all_objects = requests.get(f"{base_url}/{endpoint_url}", headers=headers)
