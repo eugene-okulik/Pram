@@ -10,6 +10,7 @@ def start_end_session():
     yield
     print('\nTesting completed')
 
+
 @pytest.fixture()
 def before_after_test():
     print("\nBefore testing")
