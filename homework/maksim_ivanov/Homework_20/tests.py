@@ -49,7 +49,8 @@ def test_put_object(before_after_test, new_object_id):
 @pytest.mark.critical
 def test_patch_object(before_after_test, new_object_id):
     with allure.step(f"Отправка PUT запроса с данными {payload}"):
-        patch_obj, patch_obj_status_code = patch_object(base_url, headers=headers, obj_id=new_object_id, payload=payload_patch)
+        patch_obj, patch_obj_status_code = patch_object(base_url, headers=headers, obj_id=new_object_id,
+                                                        payload=payload_patch)
     del patch_obj["id"]
     payload_temp = dict(payload)
     payload_temp.update(payload_patch)
