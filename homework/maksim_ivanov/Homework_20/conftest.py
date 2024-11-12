@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from data_test import headers, payload, base_url
@@ -20,6 +21,8 @@ def before_after_test():
 
 @pytest.fixture
 def new_object_id():
-    obj_id, obj_status_code = create_object(base_url, headers, payload)
+    with allure.step("Создание объекта"):
+        obj_id, obj_status_code = create_object(base_url, headers, payload)
     yield obj_id
-    delete_object(base_url, headers, obj_id)
+    with allure.step("Удаление объекта"):
+        delete_object(base_url, headers, obj_id)
