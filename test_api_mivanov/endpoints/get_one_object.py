@@ -6,6 +6,7 @@ from test_api_mivanov.endpoints.endpoint import Object
 
 class Get_one_object(Object):
     obj_id = None
+
     @allure.step("Получение одного объекта")
     def get_one_object(self, obj_id, headers=None):
         self.obj_id = obj_id

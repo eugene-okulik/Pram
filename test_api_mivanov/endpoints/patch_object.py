@@ -8,6 +8,7 @@ from endpoints.endpoint import Object
 
 class PatchObject(Object):
     obj_id = None
+
     @allure.step("Изменение объекта методом PATCH")
     def patch_update_object(self, payload, obj_id: int, headers=None):
         self.obj_id = obj_id
