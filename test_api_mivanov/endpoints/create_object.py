@@ -19,4 +19,3 @@ class CreateObject(Object):
         except json.decoder.JSONDecodeError:
             pass
         return self.response
-

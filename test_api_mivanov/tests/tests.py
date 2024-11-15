@@ -3,6 +3,8 @@ import pytest
 from helpers import load_data
 
 test_data_create = load_data("create_object_positive_test_data.json")
+
+
 @pytest.mark.parametrize("test_data_create", test_data_create)
 def test_create_object(create_object, test_data_create):
     create_object.create_new_object(payload=test_data_create)
@@ -11,13 +13,18 @@ def test_create_object(create_object, test_data_create):
 
 
 test_data_create_negative = load_data("create_object_negative_test_data.json")
+
+
 @pytest.mark.parametrize("test_data_create_negative", test_data_create_negative)
 def test_create_object_with_negative_data(create_object, test_data_create_negative):
     create_object.create_new_object(payload=test_data_create_negative)
     create_object.check_that_status_is_400()
 
+
 test_data_one_object = load_data("create_one_object_test_data.json")
 test_data_put = load_data("put_object_positive_test_data.json")
+
+
 @pytest.mark.parametrize("test_data_one_object", test_data_one_object)
 @pytest.mark.parametrize("test_data_put", test_data_put)
 def test_put_object(create_object, put_object, test_data_one_object, test_data_put):
@@ -28,6 +35,8 @@ def test_put_object(create_object, put_object, test_data_one_object, test_data_p
 
 
 test_data_patch = load_data("patch_object_positive_test_data.json")
+
+
 @pytest.mark.parametrize("test_data_one_object", test_data_one_object)
 @pytest.mark.parametrize("test_data_patch", test_data_patch)
 def test_patch_object(create_object, patch_object, test_data_one_object, test_data_patch):
