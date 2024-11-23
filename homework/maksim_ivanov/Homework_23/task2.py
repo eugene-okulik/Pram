@@ -14,7 +14,7 @@ data = {
     "userNumber": "8800100101",
     "dateOfBirthInput": "19 May 2009",
     "subjects": "History",
-    "hobbies": ("Sports","Music"),
+    "hobbies": ("Sports", "Music"),
     "currentAddress": "Russia, Moskow",
     "state": "Haryana",
     "city": "Panipat"
@@ -83,8 +83,6 @@ def test_form(driver):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     submit = driver.find_element(By.ID, "submit")
     submit.click()
-
-    time.sleep(3)
 
     tbody = driver.find_element(By.CSS_SELECTOR, "table tbody")
     lines = tbody.find_elements(By.TAG_NAME, "tr")
