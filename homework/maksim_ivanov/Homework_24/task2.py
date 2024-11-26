@@ -25,7 +25,6 @@ def test_add_to_compare(driver):
     products = wait.until(ec.visibility_of_all_elements_located((By.CLASS_NAME, "product-item-info")))
     product = random.choice(products)
     product_text = product.find_element(By.CLASS_NAME, "product-item-link").text
-    print(f"{product_text=}")
     button_compare = product.find_element(By.CLASS_NAME, "tocompare")
     actions = ActionChains(driver)
     actions.move_to_element(product)
